@@ -27,7 +27,7 @@ before_script:
 - adb shell input keyevent 82 &
 deploy:
   provider: releases
-  apikey: $GITHUB_KEY
+  api_key: $GITHUB_KEY
   file: app/build/outputs/apk/release/app-release.apk
   skip_cleanup: true
   on:
