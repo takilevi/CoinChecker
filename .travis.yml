@@ -35,6 +35,6 @@ deploy:
 notifications:
   email:
     recipients:
-  - levi.takacs@gmail.com
-      on_success: always
-      on_failure: always
+    - levi.takacs@gmail.com
+    on_success: always
+    on_failure: always
