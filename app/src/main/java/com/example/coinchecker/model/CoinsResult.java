@@ -8,13 +8,13 @@ import java.util.List;
 public class CoinsResult {
     @SerializedName("coins")
     @Expose
-    private List<Coin> coins;
+    private List<CoinData> coins;
 
-    public List<Coin> getCoins() {
+    public List<CoinData> getCoins() {
         return coins;
     }
 
-    public void setCoins(List<Coin> coins) {
+    public void setCoins(List<CoinData> coins) {
         this.coins = coins;
     }
 }
