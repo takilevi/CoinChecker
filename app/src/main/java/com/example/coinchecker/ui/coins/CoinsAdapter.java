@@ -32,7 +32,7 @@ public class CoinsAdapter extends RecyclerView.Adapter<CoinsAdapter.ViewHolder>{
 
         holder.tvName.setText(coin.getName());
         holder.tvSymbol.setText(coin.getSymbol());
-        holder.tvPrice.setText(coin.getPrice_USD());
+        holder.tvPrice.setText(coin.getQuote().getUSD().getPrice().toString());
     }
 
     @Override

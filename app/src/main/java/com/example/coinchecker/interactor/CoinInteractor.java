@@ -2,7 +2,7 @@ package com.example.coinchecker.interactor;
 
 import com.example.coinchecker.CoinCheckerApplication;
 import com.example.coinchecker.interactor.event.GetCoinsEvent;
-import com.example.coinchecker.model.CoinsResult;
+import com.example.coinchecker.model.CoinData;
 import com.example.coinchecker.network.CoinApi;
 import com.example.coinchecker.network.NetworkConfig;
 
@@ -26,14 +26,14 @@ public class CoinInteractor {
 
         GetCoinsEvent event = new GetCoinsEvent();
         try {
-            Call<CoinsResult> coinsResultCall = coinApi.getCoins(NetworkConfig.API_TOKEN,1,100,"USD");
+            Call<CoinData> coinsResultCall = coinApi.getCoins(NetworkConfig.API_TOKEN,1,100,"USD");
 
-            Response<CoinsResult> response = coinsResultCall.execute();
+            Response<CoinData> response = coinsResultCall.execute();
             if (response.code() != 200) {
                 throw new Exception("Result code is not 200");
             }
             event.setCode(response.code());
-            event.setCoins(response.body().getCoins());
+            event.setCoins(response.body().getData());
             EventBus.getDefault().post(event);
         } catch (Exception e) {
             event.setThrowable(e);
