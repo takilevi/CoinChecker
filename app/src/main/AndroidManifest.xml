@@ -23,6 +23,10 @@
             android:name=".ui.coins.CoinsActivity"
             android:label="@string/title_activity_coins"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ui.newcoin.NewCoinActivity"
+            android:label="@string/title_activity_coins"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

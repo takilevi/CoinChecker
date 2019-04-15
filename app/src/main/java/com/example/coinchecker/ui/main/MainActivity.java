@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
         setContentView(R.layout.activity_main);
 
         CoinCheckerApplication.injector.inject(this);
+
+        /*
         Button btnShowCoins = findViewById(R.id.btnShowCoins);
         btnShowCoins.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,12 +31,14 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
                 mainPresenter.showCoinsList();
             }
         });
+        */
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         mainPresenter.attachScreen(this);
+        mainPresenter.showCoinsList();
 
     }
 

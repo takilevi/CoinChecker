@@ -5,8 +5,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.coinchecker.model.Coin;
 import com.example.coinchecker.R;
 import java.util.List;
@@ -33,6 +35,7 @@ public class CoinsAdapter extends RecyclerView.Adapter<CoinsAdapter.ViewHolder>{
         holder.tvName.setText(coin.getName());
         holder.tvSymbol.setText(coin.getSymbol());
         holder.tvPrice.setText(coin.getQuote().getUSD().getPrice().toString());
+        Glide.with(this.context).load("https://s2.coinmarketcap.com/static/img/coins/64x64/".concat(coin.getId().toString()).concat(".png")).into(holder.ivImage);
     }
 
     @Override
@@ -44,12 +47,14 @@ public class CoinsAdapter extends RecyclerView.Adapter<CoinsAdapter.ViewHolder>{
         public TextView tvName;
         public TextView tvSymbol;
         public TextView tvPrice;
+        public ImageView ivImage;
 
         public ViewHolder(View itemView) {
             super(itemView);
             tvSymbol = itemView.findViewById(R.id.tvSymbol);
             tvName = itemView.findViewById(R.id.tvName);
             tvPrice = itemView.findViewById(R.id.tvPrice);
+            ivImage = itemView.findViewById(R.id.ivImage);
         }
     }
 }
