@@ -1,13 +1,19 @@
 package com.example.coinchecker.model;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
+@Entity
 public class Coin implements Serializable
 {
 
+    @PrimaryKey
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -29,25 +35,32 @@ public class Coin implements Serializable
     @SerializedName("max_supply")
     @Expose
     private Double maxSupply;
+
     @SerializedName("date_added")
     @Expose
     private String dateAdded;
+
     @SerializedName("num_market_pairs")
     @Expose
     private Integer numMarketPairs;
-    @SerializedName("platform")
-    @Expose
-    private Object platform;
     @SerializedName("cmc_rank")
     @Expose
     private Integer cmcRank;
     @SerializedName("last_updated")
     @Expose
     private String lastUpdated;
+
+    @Ignore
     @SerializedName("quote")
     @Expose
     private Quote quote;
     private final static long serialVersionUID = -56760280664825563L;
+
+    public Coin(Integer id, String name, String symbol) {
+        this.id = id;
+        this.name = name;
+        this.symbol = symbol;
+    }
 
     public Integer getId() {
         return id;
@@ -119,14 +132,6 @@ public class Coin implements Serializable
 
     public void setNumMarketPairs(Integer numMarketPairs) {
         this.numMarketPairs = numMarketPairs;
-    }
-
-    public Object getPlatform() {
-        return platform;
-    }
-
-    public void setPlatform(Object platform) {
-        this.platform = platform;
     }
 
     public Integer getCmcRank() {

@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.coinchecker.CoinCheckerApplication;
 import com.example.coinchecker.R;
 import com.example.coinchecker.model.Coin;
+import com.example.coinchecker.room.repository.CoinRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,6 +88,16 @@ public class CoinsFragment extends Fragment implements CoinsScreen{
             recyclerViewCoins.setVisibility(View.GONE);
         } else {
             recyclerViewCoins.setVisibility(View.VISIBLE);
+
+            CoinRepository coinRepository = new CoinRepository(getActivity());
+
+            for (Coin coin : coinsList) {
+                if(coinRepository.getCoin(coin.getId()) != null){
+                    coinRepository.updateCoin(coin);
+                } else {
+                    coinRepository.insertCoin(coin);
+                }
+            }
         }
     }
 
