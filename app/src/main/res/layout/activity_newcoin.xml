@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.newcoin.NewCoinActivity">
+    tools:context="com.takacsl.coinchecker.ui.newcoin.NewCoinActivity">
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
