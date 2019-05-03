@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         CoinCheckerApplication.injector.inject(this);
 
@@ -51,5 +50,6 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
     public void showCoins() {
         Intent intent = new Intent(MainActivity.this, CoinsActivity.class);
         startActivity(intent);
+        finish();
     }
 }

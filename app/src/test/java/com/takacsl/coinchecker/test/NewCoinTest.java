@@ -33,6 +33,7 @@ import androidx.test.core.app.ApplicationProvider;
 import static com.takacsl.coinchecker.TestHelper.setTestInjector;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 @RunWith(RobolectricTestRunner.class)
 public class NewCoinTest {
@@ -76,5 +77,11 @@ public class NewCoinTest {
                 }
             }
         });
+    }
+
+    @Test
+    public void testNewCoinSaveLogic() throws  Exception {
+        newCoinPresenter.addNewCoin("triggered", "T","100.1","212121.21");
+        verify(newCoinScreen).newCoin("triggered", "T",100.1,212121.21);
     }
 }
