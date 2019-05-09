@@ -12,12 +12,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.takacsl.coinchecker.CoinCheckerApplication;
 import com.takacsl.coinchecker.R;
 import com.takacsl.coinchecker.room.repository.CoinRepository;
 import com.takacsl.coinchecker.ui.coins.CoinsActivity;
 
 import javax.inject.Inject;
+
+import io.fabric.sdk.android.Fabric;
 
 public class NewCoinActivity extends AppCompatActivity implements NewCoinScreen{
     EditText etName;
@@ -31,6 +34,8 @@ public class NewCoinActivity extends AppCompatActivity implements NewCoinScreen{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
+
         setContentView(R.layout.activity_newcoin);
         CoinCheckerApplication.injector.inject(this);
 
@@ -86,7 +91,7 @@ public class NewCoinActivity extends AppCompatActivity implements NewCoinScreen{
                 }
             }
         });
-
+        Crashlytics.setString("EventAction","New coin inserted");
         Intent intent = new Intent(NewCoinActivity.this, CoinsActivity.class);
         startActivity(intent);
     }

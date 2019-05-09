@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "712683059772",
+    "firebase_url": "https://coinchecker-47e01.firebaseio.com",
+    "project_id": "coinchecker-47e01",
+    "storage_bucket": "coinchecker-47e01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712683059772:android:de4605be286eba11",
+        "android_client_info": {
+          "package_name": "com.takacsl.coinchecker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712683059772-fp8huu339kq786dlu0fqdk1c3uo078fm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYKEP2shJvxHXReFyiiwDEx80uGXNtv4U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712683059772-fp8huu339kq786dlu0fqdk1c3uo078fm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

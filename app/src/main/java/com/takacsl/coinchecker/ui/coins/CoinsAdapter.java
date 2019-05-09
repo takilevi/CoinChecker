@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.crashlytics.android.Crashlytics;
 import com.takacsl.coinchecker.R;
 import com.takacsl.coinchecker.model.Coin;
 import com.takacsl.coinchecker.room.repository.CoinRepository;
@@ -53,6 +54,7 @@ public class CoinsAdapter extends RecyclerView.Adapter<CoinsAdapter.ViewHolder>{
                 CoinRepository coinRepository = new CoinRepository(context);
                 if(coinRepository.getCoin(toUpdate.getId()) != null){
                     coinRepository.updateCoin(toUpdate);
+                    Crashlytics.setString("EventAction","Favorite checkbox changed");
                 } else {
                     //olyat checkoltunk aminek nincs id-ja
                 }

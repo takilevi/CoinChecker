@@ -16,6 +16,7 @@ import static com.takacsl.coinchecker.TestHelper.setTestInjector;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
+
 @RunWith(RobolectricTestRunner.class)
 public class MainScreenTest {
     @Inject

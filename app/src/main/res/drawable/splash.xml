@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <!-- if your splash icon is too big, and not fit right, do not use padding hacks
+     use 9-patch files instead, it is the only working solution -->
     <item android:drawable="@color/colorPrimary" />
-
     <item>
-        <bitmap android:src="@drawable/ic_launcher_foreground"
-            android:gravity="center" />
+        <bitmap android:src="@drawable/coin_logo"
+            android:gravity="center"/>
 
     </item>
 
