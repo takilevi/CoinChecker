@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">CoinChecker</string>
+    <string name="title_activity_coins">List of coins</string>
     <string name="action_settings">Settings</string>
+    <string name="button_show_coins">Get coin list</string>
+    <string name="button_send_coin">Send new coin to server</string>
+    <string name="title_activity_newcoin">Add new coin</string>
 </resources>
