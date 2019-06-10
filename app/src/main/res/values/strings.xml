@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CoinChecker</string>
+    <string name="app_name">Coin Checker</string>
     <string name="title_activity_coins">List of coins</string>
     <string name="action_settings">Settings</string>
     <string name="button_show_coins">Get coin list</string>

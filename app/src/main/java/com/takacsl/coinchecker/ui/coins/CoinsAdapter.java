@@ -56,7 +56,7 @@ public class CoinsAdapter extends RecyclerView.Adapter<CoinsAdapter.ViewHolder>{
                     coinRepository.updateCoin(toUpdate);
                     Crashlytics.setString("EventAction","Favorite checkbox changed");
                 } else {
-                    //olyat checkoltunk aminek nincs id-ja
+                    //tick changed on a coin which has no id
                 }
             }
         });
